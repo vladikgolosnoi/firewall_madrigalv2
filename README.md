@@ -4,7 +4,7 @@
 
 ## 📌 Репозиторий
 
-https://github.com/vladikgolosnoi/firewall_madrigal
+https://github.com/vladikgolosnoi/firewall_madrigalv2
 
 ## 💾 Установка и запуск (быстрый старт)
 
@@ -16,8 +16,8 @@ rustup component add rust-src
 
 ### 2. Клонируй проект:
 
-git clone https://github.com/vladikgolosnoi/firewall_madrigal.git
-cd firewall_madrigal
+git clone https://github.com/vladikgolosnoi/firewall_madrigalv2.git
+cd firewall_madrigalv2
 
 ### 3. Сборка eBPF-программы:
 
