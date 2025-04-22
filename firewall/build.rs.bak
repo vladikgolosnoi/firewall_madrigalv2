@@ -1,0 +1,25 @@
+use std::process::Command;
+use std::env;
+
+fn main() {
+    println!("cargo:rerun-if-changed=../firewall-ebpf/src/");
+    println!("cargo:rerun-if-changed=../firewall-ebpf/Cargo.toml");
+
+    let cargo = env::var("CARGO").unwrap_or_else(|_| "cargo".to_string());
+
+    let status = Command::new("rustup")
+        .args([
+            "run", "nightly", "cargo",
+            "build",
+            "-Z", "build-std",
+            "--target", "bpfel-unknown-none",
+            "--manifest-path", "../firewall-ebpf/Cargo.toml",
+            "--release",
+        ])
+        .status()
+        .expect("failed to build eBPF");
+
+    if !status.success() {
+        panic!("eBPF build failed");
+    }
+}

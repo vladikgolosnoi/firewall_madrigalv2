@@ -1,0 +1,14 @@
+blocked:
+  tcp: "*"
+  udp: "*"
+  ips:
+    - 1.1.1.1
+    - 8.8.8.8
+
+allowed:
+  http1.0: 80
+  http1.1: 80
+  https1.1: 443
+  https2: 443
+  http3: 443
+  dns: 53

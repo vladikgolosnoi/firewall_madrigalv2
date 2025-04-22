@@ -1,0 +1,12 @@
+[build]
+target = "bpfel-unknown-none"
+
+[target.bpfel-unknown-none]
+runner = "sudo"
+rustflags = [
+  "-C", "panic=abort",
+  "-Z", "unstable-options",
+]
+
+[unstable]
+build-std = ["core"]
